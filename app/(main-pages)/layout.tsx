@@ -16,6 +16,7 @@ import {
   NavbarItem,
   Link,
   Button,
+  Image,
 } from "@nextui-org/react";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -35,18 +36,39 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={GeistSans.className} suppressHydrationWarning>
-      <body className="bg-gray-100 text-foreground">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+      <body>
+
           <NextUIProvider>
+            <main className="w-full h-full flex flex-col justify-center items-center">
               {/* <NavbarComponent /> */}
-              {children}
+              <Navbar isBlurred={false} className="w-full">
+                <NavbarContent className="" justify="start">
+                  <NavbarItem>
+                    <Image
+                      src="/logo/logo1.png"
+                      alt="logo"
+                      width={250}
+                      height={50}
+                    ></Image>
+                  </NavbarItem>
+                </NavbarContent>
+                <NavbarContent justify="end">
+                  {/* <NavbarItem className="flex">
+          <Link href="#">Login</Link>
+        </NavbarItem> */}
+                  <NavbarItem>
+                    {/* <Button as={Link} color="primary" href="#" variant="flat">
+            Sign Up
+          </Button> */}
+                    {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
+                  </NavbarItem>
+                </NavbarContent>
+              </Navbar>
+              <div className="w-[90vw] md:w-[60vw] h-full">
+                {children}
+              </div>
+            </main>
           </NextUIProvider>
-        </ThemeProvider>
       </body>
     </html>
   );

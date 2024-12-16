@@ -1,0 +1,30 @@
+CREATE OR REPLACE FUNCTION get_distinct_platform_items(
+  sort_option TEXT,
+  search_term TEXT,
+  limit_val INT,
+  offset_val INT
+)
+RETURNS TABLE(item exgen) AS $$
+BEGIN
+  RETURN QUERY
+  SELECT DISTINCT ON (platform) *
+  FROM exgen
+  WHERE (search_term = '' OR title ILIKE '%' || search_term || '%')
+  AND (end_at_timestamp::text ~ '^\d+$' OR end_at_timestamp IS NULL) -- Ensure valid bigint or NULL
+  AND (applycount::text ~ '^\d+$' OR applycount IS NULL) -- Ensure valid bigint or NULL
+  AND (demandcount::text ~ '^\d+$' OR demandcount IS NULL) -- Ensure valid bigint or NULL
+  ORDER BY
+    platform,
+    CASE
+      WHEN sort_option = '기한 적은순' THEN COALESCE(NULLIF(end_at_timestamp::text, '')::bigint, 0)
+      WHEN sort_option = '기한 많은순' THEN -COALESCE(NULLIF(end_at_timestamp::text, '')::bigint, 0)
+      WHEN sort_option = '지원 적은순' THEN COALESCE(NULLIF(applycount::text, '')::bigint, 0)
+      WHEN sort_option = '지원 많은순' THEN -COALESCE(NULLIF(applycount::text, '')::bigint, 0)
+      WHEN sort_option = '모집 적은순' THEN COALESCE(NULLIF(demandcount::text, '')::bigint, 0)
+      WHEN sort_option = '모집 많은순' THEN -COALESCE(NULLIF(demandcount::text, '')::bigint, 0)
+      ELSE COALESCE(NULLIF(end_at_timestamp::text, '')::bigint, 0)
+    END,
+    COALESCE(NULLIF(end_at_timestamp::text, '')::bigint, 0) DESC
+  LIMIT limit_val OFFSET offset_val;
+END;
+$$ LANGUAGE plpgsql;
