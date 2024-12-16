@@ -47,6 +47,7 @@ export default function RootLayout({
               {children}
           </NextUIProvider>
         </ThemeProvider>
+        
       </body>
     </html>
   );
