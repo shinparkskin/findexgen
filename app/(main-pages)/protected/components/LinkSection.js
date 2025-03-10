@@ -62,6 +62,31 @@ function LinkSection() {
       'url':'https://www.cloudreview.co.kr',
       'imageUrl':'/클라우드뷰.png'
     },
+    {
+      'name':'티블',
+      'url':'https://www.tble.kr/',
+      'imageUrl':'/티블.png'
+    },
+    {
+      'name':'클립뷰',
+      'url':'https://xn--5y2bw0fi0u.kr/',
+      'imageUrl':'/클립뷰.png'
+    },
+    {
+      'name':'포포몬',
+      'url':'https://popomon.com/',
+      'imageUrl':'/포포몬.png'
+    },
+    {
+      'name':'아싸뷰',
+      'url':'https://assaview.co.kr/',
+      'imageUrl':'/아싸뷰.png'
+    },
+    {
+      'name':'링블',
+      'url':'https://www.ringble.co.kr/',
+      'imageUrl':'/링블.png'
+    },
   ]
   return (
     <div className="flex flex-wrap gap-1 justify-center items-center py-5">
