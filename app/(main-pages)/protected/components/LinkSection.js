@@ -72,11 +72,11 @@ function LinkSection() {
       'url':'https://xn--5y2bw0fi0u.kr/',
       'imageUrl':'/클립뷰.png'
     },
-    {
-      'name':'포포몬',
-      'url':'https://popomon.com/',
-      'imageUrl':'/포포몬.png'
-    },
+    // {
+    //   'name':'포포몬',
+    //   'url':'https://popomon.com/',
+    //   'imageUrl':'/포포몬.png'
+    // },
     {
       'name':'아싸뷰',
       'url':'https://assaview.co.kr/',
