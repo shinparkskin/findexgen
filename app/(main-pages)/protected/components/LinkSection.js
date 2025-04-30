@@ -97,6 +97,16 @@ function LinkSection() {
       'url':'https://storyn.kr/review_campaign_list.php',
       'imageUrl':'/스토리앤미디어.png'
     },
+    {
+      'name':'똑똑체험단',
+      'url':'https://ddok.co.kr/',
+      'imageUrl':'/똑똑체험단.png'
+    },
+    {
+      'name':'파블로',
+      'url':'https://pavlovu.com/',
+      'imageUrl':'/파블로.png'
+    },
   ]
   return (
     <div className="flex flex-wrap gap-1 justify-center items-center py-5">
