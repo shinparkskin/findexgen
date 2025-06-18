@@ -107,6 +107,11 @@ function LinkSection() {
       'url':'https://pavlovu.com/',
       'imageUrl':'/파블로.png'
     },
+    {
+      'name':'위유',
+      'url':'https://weu.kr/',
+      'imageUrl':'/위유.png'
+    },
   ]
   return (
     <div className="flex flex-wrap gap-1 justify-center items-center py-5">
