@@ -88,11 +88,6 @@ function LinkSection() {
       'imageUrl':'/링블.png'
     },
     {
-      'name':'더리뷰',
-      'url':'https://www.xn--9m1b93jvyd.com/',
-      'imageUrl':'/더리뷰.png'
-    },
-    {
       'name':'스토리앤미디어',
       'url':'https://storyn.kr/review_campaign_list.php',
       'imageUrl':'/스토리앤미디어.png'
