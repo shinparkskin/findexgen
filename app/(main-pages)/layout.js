@@ -58,7 +58,7 @@ export default function RootLayout({
                     {/* <Button as={Link} color="primary" href="#" variant="flat">
             Sign Up
           </Button> */}
-                    {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
+                    {/* {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />} */}
                   </NavbarItem>
                 </NavbarContent>
               </Navbar>
