@@ -107,6 +107,11 @@ function LinkSection() {
       'url':'https://weu.kr/',
       'imageUrl':'/위유.png'
     },
+    {
+      'name':'리뷰원정대',
+      'url':'https://xn--vk1bn0kvydxrlprb.com/',
+      'imageUrl':'/리뷰원정대.png'
+    },
   ]
   return (
     <div className="flex flex-wrap gap-1 justify-center items-center py-5">
